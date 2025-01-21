@@ -46,7 +46,7 @@ const userSchema= new Schema({
         type:String,
         required:[true,'password is required']
     },
-    refereshToken:{
+    refreshToken:{
         type:String
     }
 },{timestamps:true})
@@ -97,4 +97,4 @@ userSchema.pre("save", async function(next){
 
     )
   }
-const User= mongoose.model("User",userSchema)
+export const User= mongoose.model("User",userSchema)
