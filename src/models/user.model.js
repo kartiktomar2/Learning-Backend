@@ -63,6 +63,7 @@ userSchema.pre("save", async function(next){
 })
 
 // now defining custom method to comapre password entered by user and the password stored in database
+//these will be only accessed by the instance of User  
   userSchema.methods.isPasswordCorrect=async function(password){
           return await bcrypt.compare(password,this.password)
   }
